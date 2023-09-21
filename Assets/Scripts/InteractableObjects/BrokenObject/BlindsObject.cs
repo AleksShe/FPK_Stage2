@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BlindsObject : BaseObject
 {
-    [SerializeField] private LockEnabableObject _lockObject;
+   
     
     private Animator _animator;
     private bool _open = true;
@@ -16,22 +16,18 @@ public class BlindsObject : BaseObject
     }
     public override void OnClicked(InteractHand interactHand)
     {
-        if (_lockObject.CurrentState == "Idle" && _open)
+        if (_open)
         {
-            _animator.SetTrigger(_lockObject.CurrentState);
+            _animator.SetTrigger("Idle");
             _open= false;
-
         }
-        else if (_lockObject.CurrentState == "Idle" && !_open)
+        else
         {
             _animator.SetTrigger("Reverse");
             _open = true;
         }
 
-        else
-        {
-            _animator.SetTrigger(_lockObject.CurrentState);
-        }
+        
 
     }
 

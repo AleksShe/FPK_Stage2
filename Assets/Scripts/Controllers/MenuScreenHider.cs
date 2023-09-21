@@ -23,12 +23,12 @@ public class MenuScreenHider : MonoBehaviour
             HideAllPanels();
             foreach (var zone in InstanceHandler.Instance.ZoneTriggers)
             {
-                if (zone.IsVisited)
-                    zone.SetTextColor(RoomState.Outside);
+                //if (zone.IsVisited)
+                  //  zone.SetTextColor(RoomState.Outside);
             }
             var currentZone = InstanceHandler.Instance.ZoneTriggers.FirstOrDefault(r => r.ZoneName == InstanceHandler.Instance.CurrentRoom);
-            if (currentZone != null)
-                currentZone.SetTextColor(RoomState.Inside);
+           // if (currentZone != null)
+             //   currentZone.SetTextColor(RoomState.Inside);
 
         }
        

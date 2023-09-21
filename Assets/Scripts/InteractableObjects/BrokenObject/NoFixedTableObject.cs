@@ -6,18 +6,18 @@ using UnityEngine;
 public class NoFixedTableObject : BaseObject
 {
     [SerializeField] private Animator _animator;
-    [SerializeField] private LockEnabableObject _lockObject;
+   
     private bool _upPosition;
     
     public override void OnClicked(InteractHand interactHand)
     {
-        if (_lockObject.CurrentState == "Idle" && _upPosition)
+        if (_upPosition)
         {
             _animator.SetTrigger("Down");
             _upPosition = false;
 
         }
-        else if (_lockObject.CurrentState == "Idle" && !_upPosition)
+        else 
         {
             _animator.SetTrigger("Up");
             _upPosition = true;
@@ -25,10 +25,7 @@ public class NoFixedTableObject : BaseObject
         }
 
 
-        else
-        {
-            _animator.SetTrigger(_lockObject.CurrentState);
-        }
+      
 
     }
  
