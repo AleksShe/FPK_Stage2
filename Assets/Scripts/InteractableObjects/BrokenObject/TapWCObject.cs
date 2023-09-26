@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class TapWCObject : BaseObject
 {
-    [SerializeField] private LockEnabableObject _lockObject;
+    
     [SerializeField] private ParticleSystem _particleSystem;
     private Collider _collider;
     private Animator _animator;
+    
     private void Start()
     {
         _animator = GetComponent<Animator>();
@@ -17,21 +18,11 @@ public class TapWCObject : BaseObject
     }
 
     public override void OnClicked(InteractHand interactHand)
-    {
-        if (_lockObject.CurrentState == "Idle")
-        {
+    {           
             _collider.enabled = false;
-            _animator.SetTrigger(_lockObject.CurrentState);
+            _animator.SetTrigger("Idle");
             _particleSystem.Play();
-            StartCoroutine(StopWater());
-        }
-        else
-        {
-            
-            _animator.SetTrigger(_lockObject.CurrentState);
-            
-        }
-        
+            StartCoroutine(StopWater());                                                               
     }
 
     private IEnumerator StopWater()

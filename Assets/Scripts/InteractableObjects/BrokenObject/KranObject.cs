@@ -5,17 +5,20 @@ using UnityEngine;
 
 public class KranObject : BaseObject
 {
-    [SerializeField] private LockEnabableObject _lockObject;
+   
     [SerializeField] private Animator _animator;
+    private bool _open = true;
     public override void OnClicked(InteractHand interactHand)
     {
-       if(_lockObject.CurrentState == "Idle")
+       if(_open)
         {
             _animator.SetTrigger("Idle");
+            _open= false;
         }
         else
         {
-            _animator.SetTrigger(_lockObject.CurrentState);
+            _animator.SetTrigger("Broken");
+            _open= true;
         }
     }
 }
