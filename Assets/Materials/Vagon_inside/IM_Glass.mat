@@ -193,7 +193,7 @@ Material:
     - _EnableFogOnTransparent: 1
     - _EnableGeometricSpecularAA: 0
     - _EnergyConservingSpecularColor: 1
-    - _GlossMapScale: 0.019
+    - _GlossMapScale: 0.049
     - _Glossiness: 0.909
     - _GlossyReflections: 1
     - _HeightAmplitude: 0.02
@@ -273,7 +273,7 @@ Material:
     m_Colors:
     - _BaseColor: {r: 0.4150943, g: 0.37111938, b: 0.32306865, a: 0.15686275}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 0.41509426, g: 0.37111935, b: 0.3230686, a: 0.15686275}
+    - _Color: {r: 0.56804025, g: 0.6509434, b: 0.6390517, a: 0.34901962}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
