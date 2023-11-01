@@ -5,17 +5,17 @@ using UnityEngine;
 
 public class ButtonObject : BaseObject
 {
-    [SerializeField] private LockEnabableObject _lockObject;
+    
     [SerializeField] private Animator[] _waterAnim;
+    
 
 
     public override void OnClicked(InteractHand interactHand)
     {
 
         foreach (var anim in _waterAnim) 
-        {
-            anim.SetTrigger(_lockObject.CurrentState);
-            
+        {                    
+                anim.SetTrigger("Idle");                     
         }
 
     }
